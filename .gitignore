@@ -1,0 +1,11 @@
+.DS_Store
+.sass-cache
+.vagrant
+/bootstrap/compiled.php
+/vendor
+coverage
+composer.phar
+.env.*.php
+.env.php
+Thumbs.db
+*.css
