@@ -15,4 +15,20 @@
             <directory>./app/tests/</directory>
         </testsuite>
     </testsuites>
+
+   <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">app/commands</directory>
+            <directory suffix=".php">app/controllers</directory>
+            <directory suffix=".php">app/models</directory>
+            <file>app/routes.php</file>
+            <exclude>
+                <file>app/controllers/BaseController.php</file>
+            </exclude>
+        </whitelist>
+    </filter>
+
+    <logging>
+        <log type="coverage-html" target="public/coverage" charset="UTF-8" />
+    </logging>
 </phpunit>
