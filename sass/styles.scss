@@ -1,0 +1,135 @@
+@import "sass_config";
+
+body {
+    @extend %clearfix;
+    margin: 0px;
+    padding: 0px;
+    color: $white;
+    font: {
+        size: $base-font-size;
+        family: Arial, Helvetica, sans-serif;
+        weight: normal;
+    }
+}
+
+.login {
+    background: image-url('login_bg.png') no-repeat 100% 0px scroll;
+    background-size: 100%;
+    @extend %margin_auto;
+    padding: 0px;
+    font-size: em_font_size(12px);
+    .logo {
+        padding-top: 8%;
+        @extend %center_alignment;
+    }
+
+    .login_area {
+        @extend %center_alignment;
+        @extend %margin_auto;
+        padding-top: 5%;
+
+        & > div {
+            @extend %clearfix;
+            width: 988px;
+            @extend %margin_auto;
+
+            & > span {
+                font: {
+                    weight: bold;
+                    size: em_font_size(16px);
+                }
+                letter-spacing: 1px;
+                padding: 49.5px 0;
+                @extend %float_left;
+                @extend %clearfix;
+            }
+        }
+
+        .user_thumb {
+            padding: 0 10px;
+            @extend %float_left;
+            @extend %middle_alignment;
+
+            & > span, & > img {
+                @extend %float_left;
+            }
+
+            & > img {
+                margin: 0 10px;
+            }
+
+            & > span { 
+                padding: 60px 0px;
+            }
+        }
+
+        label {
+            @extend %float_left;
+            height: 42px;
+        }
+
+        input[type="text"], input[type="password"] {
+            border: 0px;
+            padding: 11px 13px;
+            background-color: $white;
+            width: 300px;
+            @extend %middle_alignment;
+            @extend %float_left;
+        }
+    }
+
+    input[type="submit"] {
+        margin-top: 3%;
+        padding: 13px 56px 13px 13px;
+        background: $button-background-color image-url('enter_icon.png') no-repeat 100% 0px scroll;
+        border: none;
+        color: $white;
+        font-weight: bold;
+        width:220px;
+        @extend %middle_alignment;
+    }
+}
+
+.wraper {
+
+    .header {
+        background-color: $header-background-color;
+        height: 50px;
+
+        .header_nav {
+            margin: 0px 8%;
+
+            .logo {
+                padding: 10px 0px;
+                @extend %float_left;
+            }
+
+            input[type="text"] {
+                background: $search-textbox-background-color image-url('searchIcon.png') no-repeat 100% 0px scroll;
+                border: none;
+                padding: 6px 40px 6px 6px;
+            }
+
+            .search {
+                padding: 10px 0px;
+                @extend %float_right;
+            }
+
+            .nav > ul li {
+                @extend %float_right;
+                margin-left: 60px;
+                padding: 16px 0px;
+
+                & a {
+                    text-decoration: none;
+                    color: $nav-font-color;
+                }
+            }
+
+        }
+    }
+
+    .content {
+        padding: 0px 8%;
+    }
+}

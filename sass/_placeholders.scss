@@ -1,0 +1,27 @@
+%float_left {
+    float: left;
+}
+
+%float_right {
+    float: right;
+}
+
+%clearfix:after {
+    clear: both;
+    content: '';
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+%middle_alignment {
+    vertical-align: middle;
+}
+
+%center_alignment {
+    text-align: center;
+}
+
+%margin_auto {
+    margin: 0 auto;
+}

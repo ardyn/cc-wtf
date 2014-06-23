@@ -1,0 +1,16 @@
+@import "compass/reset";
+@import "normalize";
+@import "compass";
+@import "placeholders";
+
+$white: #FFF;
+$header-background-color: #2D3032;
+$button-background-color: #A43030;
+$search-textbox-background-color: #212325;
+$nav-font-color: #BFBFBF;
+
+$base-font-size: 14px;
+
+@function em_font_size($size: 14px) {
+    @return unquote(($size / $base-font-size) + "em");
+}
