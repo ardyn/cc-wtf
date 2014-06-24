@@ -1,9 +1,9 @@
 %float_left {
-    float: left;
+    float: left!important;
 }
 
 %float_right {
-    float: right;
+    float: right!important;
 }
 
 %clearfix:after {
@@ -14,14 +14,26 @@
     visibility: hidden;
 }
 
-%middle_alignment {
+%vertical_middle {
     vertical-align: middle;
 }
 
-%center_alignment {
+%veritical_bottom {
+    vertical-align: bottom;
+}
+
+%text_center {
     text-align: center;
 }
 
 %margin_auto {
     margin: 0 auto;
+}
+
+%position_relative {
+    position: relative;
+}
+
+%display_block {
+    display: block;
 }
