@@ -28,6 +28,7 @@ figure {
     @extend %margin_auto;
     padding: 0px;
     font-size: em_font_size(12px);
+
     .logo {
         padding-top: 8%;
         @extend %text_center;
@@ -39,7 +40,6 @@ figure {
         padding-top: 5%;
 
         & > div {
-            @extend %clearfix;
             width: 988px;
             @extend %margin_auto;
 

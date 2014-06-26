@@ -12,9 +12,9 @@
         <link rel="stylesheet" type="text/css" href="{{ URL::to('/') }}/css/styles.css"/>
         <!--<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>-->
     </head>
-    <body>
+    <body class="login">
         {{ Form::open() }}
-        <div class="login">
+        <div>
             <div class="logo">
                 <img src="/images/login_logo.png">
             </div>
@@ -24,7 +24,7 @@
                     <span>
                         {{ Form::input('text', 'username', '', ['placeholder' => 'Username']) }}
                         <label for="username">
-                            <img src="images/user_icon.png" alt="Username" />
+                            <img src="/images/user_icon.png" alt="Username" />
                         </label>
                     </span>
                     <span class="user_thumb">
@@ -35,7 +35,7 @@
                     <span>
                         {{ Form::input('password', 'password', '', ['placeholder' => 'Password']) }}
                         <label for="password">
-                            <img src="images/pass_icon.png" alt="Password" />
+                            <img src="/images/pass_icon.png" alt="Password" />
                         </label>
                     </span>
                 </div>

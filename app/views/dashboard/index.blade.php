@@ -46,6 +46,6 @@ Welcome to CRM - Dashboard
 @stop
 
 @section('js-scripts')
-{{ HTML::script('/js/bootstrap.js') }}
+{{ HTML::script('/js/vendor/extjs/bootstrap.js') }}
 {{ HTML::script('/js/grid-leads.js') }}
 @stop
