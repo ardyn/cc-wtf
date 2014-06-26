@@ -16,7 +16,7 @@
     </head>
     <body>
         <header class="gradient topSec">
-            <section class="wrapper clearfix">
+            <section class="wrapper">
                 <figure class="logo"><img src="/images/logo.png" alt="CRM Logo"></figure>
                 <div class="floatRight">
                     <nav class="floatLeft">
@@ -125,8 +125,12 @@
             </div><!-- Side Bar Menu Wrapper End -->
         </aside><!-- Navigation End -->
 
-        <footer>
-            
+        @yield('content');
+
+        <footer class="clearfix">
+            <p class="floatLeft">CRM, All Rights Reserved, 2014</p>
+            <p class="floatRight">Powered by <a href="#">Cooperative Computing</a></p>
+            <script type="text/javascript" src="/js/configuration.js"></script>
             @yield('js-scripts')
         </footer>
     </body>

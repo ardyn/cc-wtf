@@ -2,36 +2,27 @@
 @import "normalize";
 @import "compass";
 @import "placeholders";
-@import "mixins";
 
 $white: #FFF;
 $header-background-color: #2D3032;
 $button-background-color: #A43030;
 $search-textbox-background-color: #212325;
-$search-textbox-color: #bfbfbf;
-$search-submit-background-color: #a43030;
-$search-submit-text-color: #a43030;
-$nav-font-color: #BFBFBF;
-$sidebar-background-color: #a43030;
-$header-font-color: #bfbfbf;
+$search-textbox-color: #BFBFBF;
 $header-span-color: #292c2e;
 $header-span-background-color: #ffba00;
-$header-span-button-background: #a43030;
 $header-span-button-color: #fbfbfb;
 $body-background-color: #373a3d;
-$sidewrapper-a-background-color: #a43030;
 $sidewrapper-a-color: #F1C40F;
 $sidebar-wrapper-li-a-color: #555;
 $sidebar-menu-wrapper-navigation-a-color: #D5DDE5;
 $sidebar-menu-wrapper-navigation-a-hover-active-color: #F4DE4B;
+$footer-font-color: #2f3234;
+$content-background-color: #f8f8f8;
 
 // @mixins box-shadow
 $defualt-box-shadow-color: rgba(50, 45, 48, 0.75);
 $default-box-shadow-h-offset: 3px;
-$default-box-shadow-v-offset: 0px;
 $default-box-shadow-blur: 6px;
-$default-box-shadow-spread: 0px;
-$default-box-shadow-inset: false;
 
 // @mixins transition
 $default-transition-property: all;

@@ -100,54 +100,6 @@ figure {
     }
 }
 
-/* .wraper {
-
-    .header {
-        background-color: $header-background-color;
-        height: 50px;
-        font-size: em_font_size(13px);
-
-        .header_nav {
-            margin: 0px 8%;
-
-            .logo {
-                padding: 10px 0px;
-                @extend %float_left;
-            }
-
-            input[type="text"] {
-                background: $search-textbox-background-color image-url('searchIcon.png') no-repeat 100% 0px scroll;
-                border: none;
-                padding: 6px 40px 6px 6px;
-            }
-
-            .search {
-                padding: 10px 0px 10px 20px;
-                @extend %float_right;
-            }
-
-            .nav > ul li {
-                @extend %float_right;
-                margin-left: 60px;
-                padding: 18px 0px;
-
-                & a {
-                    text-decoration: none;
-                    color: $nav-font-color;
-                }
-            }
-        }
-    }
-
-    .content {
-        padding: 0px 8%;
-
-        .left_nav {
-            
-        }
-    }
-} */
-
 .gradient {
     background: rgb(34,36,38); // Old browsers 
     background: -moz-linear-gradient(top,  rgba(34,36,38,1) 0%, rgba(55,59,62,1) 100%); // FF3.6+ 
@@ -174,7 +126,7 @@ figure {
         }
 
         .pieClass { 
-            @include pie();
+            //@include pie();
         }
 
         figure.pieClass img,
@@ -198,7 +150,7 @@ figure {
 
         a {
             font-size: 12px;
-            color: $header-font-color;
+            color: $search-textbox-color;
             padding: 15px 0px 0px;
             @extend %display_block;
 
@@ -210,7 +162,7 @@ figure {
 
                 .btn {
                     cursor: pointer;
-                    background: $header-span-button-background;
+                    background: $button-background-color;
                     width: 36px;
                     height: 33px;
                     margin-left: -4px;
@@ -252,12 +204,12 @@ figure {
 }
 
 .topSec input[type="submit"] { 
-    background: $search-submit-background-color; 
+    background: $button-background-color; 
     width: 31px;
     height: 33px;
     border: 0px;
     margin-left: -3px;
-    color: $search-submit-text-color; 
+    color: $button-background-color; 
 }
 
 .floatLeft {
@@ -269,15 +221,15 @@ figure {
 }
 
 .sidebar-wrapper { 
-    background-color: $sidebar-background-color;
+    background-color: $button-background-color;
     position: fixed;
     width: 60px;
     top: 0px;
     bottom: 0px;
     margin-top: 52px;
     z-index: 2;
-    @include single-box-shadow();
-    @include single-transition();
+    @include single-box-shadow;
+    @include single-transition;
 
     ul {
         padding: 0px 3px;
@@ -287,7 +239,7 @@ figure {
             margin: 0px;
             border-bottom: 1px solid #851717;
             @extend %display_block;
-            @include single-box-shadow(rgba(255,255,255,0.2), 1px, 0px, 0px, 0px);
+            @include single-box-shadow(rgba(255,255,255,0.2), 0px, 1px, 0px, 0px);
 
             .tooltip {
                 white-space: nowrap;
@@ -313,10 +265,10 @@ figure {
             }
         }
 
-        li.active > a, li.current > a, li.hover > a {
+        li.active > a, li.current > a, li:hover > a {
             text-decoration:none; margin:0px -3px;
             @extend %position_relative;
-            background-color: $sidewrapper-a-background-color;
+            background-color: $button-background-color;
             color: $sidewrapper-a-color;
             border-left:3px solid $sidewrapper-a-color;
         }
@@ -327,7 +279,7 @@ figure {
     }
         
     .sidebar-menu-wrapper .navigation li {
-        @include single-box-shadow(rgba(60, 63, 67, 0.95), 1px, 0px, 0px, 0px);
+        @include single-box-shadow(rgba(60, 63, 67, 0.95), 0px, 1px, 0px, 0px);
     }
 }
 
@@ -335,8 +287,8 @@ figure {
     margin-top: 52px;
     position: fixed;
     top: 0;
-    @include single-transition();
-    width: 229px;
+    @include single-transition;
+    width: 250px;
     z-index: 1;
     left: 60px;
 
@@ -347,7 +299,8 @@ figure {
         
         li { 
             border-bottom: 1px solid #292c2e;
-            margin: 0px 5px 0px 15px; 
+            margin: 0px 5px 0px 15px;
+            @include single-box-shadow(rgba(60, 63, 67, 0.95), 1px, 0px, 0px, 0px);
 
             a { 
                 color: $sidebar-menu-wrapper-navigation-a-color;
@@ -375,7 +328,128 @@ figure {
             position: absolute;
             text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2); 
         }
+    }
+}
 
+.main-content { 
+    background: $content-background-color;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    @include single-transition(all, 0.3s, ease-in, 0s);
+    margin: 50px 0 0 60px;
+    padding: 25px 10px 25px 20px;
+
+    h1 {
+        margin-bottom: 20px;
     }
 
+    .welcom-content {
+        background: #ede6c2;
+        border: 1px solid #d7d1b2;
+        margin-bottom: 18px;
+        @include border-radius(5px);
+        @extend %clearfix;
+
+        h3 {
+            padding: 10px 0 9px 12px;
+
+            span {
+                font-weight: normal;
+            }
+        }
+
+        .fa.fa-times-circle {
+            color: #665e32;
+            padding: 11px 9px 0 0;
+            cursor: pointer; 
+        }
+    }
+
+    .content-box {
+        background: #ededed;
+        margin-bottom: 20px;
+        @include single-box-shadow($color:#e2e2e2);
+
+        .gradient {
+            margin-bottom: 10px;
+        }
+
+        .fa.fa-users, .daily-box .fa-tasks, .recent-box .fa-star-o {
+            color: $white;
+            padding: 0px 8px 0px 18px;
+            font-size: em_font_size(20px);
+        }
+        
+        h2 {
+            display: inline-block;
+            padding: 13px 0px;
+            color: $header-span-background-color;
+            font: {
+                family: HelveticaNeueBold, Arial, Helvetica, sans-serif;
+                size: em_font_size(16px);
+            }
+
+        }
+
+        .fa.fa-minus-circle {
+            font-size: 18px;
+            color: $white;
+            padding: 15px;
+            cursor: pointer;
+        }
+
+        .filter {
+            margin-bottom: 5px;
+            @extend %clearfix;
+        }
+
+        input[type="text"], input[type="search"] {
+            border: 1px solid #c5c5c5;
+            background: $white;
+            color: #838687;
+            font-size: em_font_size(12px);
+            width: 17%;
+            padding: 8px 0px 8px 12px;
+            margin-left: 8px;
+        }
+
+        input[type="image"] {
+            margin-left: -6px;
+            vertical-align: middle;
+        }
+
+        label {
+            font-size: em_font_size(12px);
+            color: #838687;
+            padding-left: 13px;
+        }
+
+        .btn {
+            margin-left: -37px;
+        }
+
+        form {
+            width: 70%;
+        }
+    }
+}
+
+.side-menu { 
+    margin-left: 288px !important; 
+}
+
+footer {
+    margin-top: 10px;
+    @extend %clearfix;
+
+    p {
+        color: $footer-font-color;
+        font-size: em_font_size(11px);
+
+        a {
+            color: $footer-font-color;
+            @include single-transition(all,0.3s, ease-in, 0s);
+        }
+    }
 }
