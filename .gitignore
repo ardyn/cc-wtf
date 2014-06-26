@@ -8,4 +8,4 @@ composer.phar
 .env.*.php
 .env.php
 Thumbs.db
-*.css
+/public/css/*.css
