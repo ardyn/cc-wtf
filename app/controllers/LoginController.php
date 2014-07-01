@@ -9,10 +9,11 @@ class LoginController extends \BaseController {
      */
     public function getIndex()
     {
+        if (Auth::check()) 
+            return Redirect::to('/Dashboard');
         return View::make('login.index');
     }
-
-
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -31,7 +32,23 @@ class LoginController extends \BaseController {
      */
     public function store()
     {
-        //
+        $request  = Request::create('api/login', 'POST');
+        $response = Route::dispatch($request)->getData();
+        // User Authenticated
+        if(isset($response->error) && $response->error != 1) {
+            $users = User::getUserByUsername(Input::get('username'));
+            if (!Session::has('is_verified')) {
+                //
+                Session::put('is_verified', $users);
+            }
+            if (Auth::check()) {
+                return Redirect::to('/Dashboard');
+            }
+        } else {
+            // Authentication failed
+            return View::make('login.index')
+                ->with('error_message', $response->data);
+        }
     }
 
 

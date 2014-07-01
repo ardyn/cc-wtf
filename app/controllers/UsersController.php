@@ -1,15 +1,15 @@
 <?php
 
-class DashboardController extends \BaseController {
+class UsersController extends BaseController {
 
 	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
-	public function showIndex()
+	public function index()
 	{
-		return View::make('dashboard.index');
+		//
 	}
 
 
@@ -80,6 +80,29 @@ class DashboardController extends \BaseController {
 	public function destroy($id)
 	{
 		//
+	}
+
+	/**
+	 * User Login View
+	 *
+	 * @return Response
+	 */
+
+	public function getLogin()
+	{
+		return View::make('login.index');
+	}
+
+	/**
+	 * Logout
+	 *
+	 * @return Response
+	 */
+	public function LogOut()
+	{
+		Auth::logout();
+		Session::flush();
+		return Redirect::to('/');
 	}
 
 

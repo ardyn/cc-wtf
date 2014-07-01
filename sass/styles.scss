@@ -14,12 +14,14 @@ body {
     }
 }
 
-a {
-    text-decoration: none;
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary, div {
+    display: block;
+    margin: 0px;
+    padding: 0px;
 }
 
-figure {
-    margin: 0px;
+a {
+    text-decoration: none;
 }
 
 .login {
@@ -85,6 +87,10 @@ figure {
             width: 300px;
             @extend %vertical_middle;
             @extend %float_left;
+
+            .error {
+                border: 1px solid $red;
+            }
         }
     }
 
@@ -342,6 +348,12 @@ figure {
 
     h1 {
         margin-bottom: 20px;
+        color: $button-background-color;
+        text-transform: uppercase;
+        font: {
+            size: em_font_size(24px);
+            family: HelveticaNeueBold, Arial, Helvetica, sans-serif;
+        }
     }
 
     .welcom-content {
@@ -353,6 +365,11 @@ figure {
 
         h3 {
             padding: 10px 0 9px 12px;
+            color: #665e32;
+            font: {
+                family: HelveticaNeueBold,Arial,Helvetica,sans-serif;
+                size: em_font_size(15px);
+            }
 
             span {
                 font-weight: normal;
@@ -365,78 +382,148 @@ figure {
             cursor: pointer; 
         }
     }
+}
 
-    .content-box {
-        background: #ededed;
-        margin-bottom: 20px;
-        @include single-box-shadow($color:#e2e2e2);
+.content-box {
+    background: #ededed;
+    margin-bottom: 20px;
+    @include single-box-shadow($color:#e2e2e2);
 
-        .gradient {
-            margin-bottom: 10px;
+    .creat-box {
+        cursor: pointer;
+        width: 29%;
+        padding-right: 1%;
+        text-align: right; 
+    }
+
+    .fa.fa-users, .daily-box .fa-tasks, .recent-box .fa-star-o {
+        color: $white;
+        padding: 0px 8px 0px 18px;
+        font-size: em_font_size(20px);
+    }
+    
+    h2 {
+        display: inline-block;
+        padding: 13px 0px;
+        color: $header-span-background-color;
+        font: {
+            family: HelveticaNeueBold, Arial, Helvetica, sans-serif;
+            size: em_font_size(16px);
         }
 
-        .fa.fa-users, .daily-box .fa-tasks, .recent-box .fa-star-o {
-            color: $white;
-            padding: 0px 8px 0px 18px;
-            font-size: em_font_size(20px);
-        }
-        
-        h2 {
-            display: inline-block;
-            padding: 13px 0px;
-            color: $header-span-background-color;
-            font: {
-                family: HelveticaNeueBold, Arial, Helvetica, sans-serif;
-                size: em_font_size(16px);
-            }
+    }
 
+    .fa.fa-minus-circle {
+        font-size: 18px;
+        color: $white;
+        padding: 15px;
+        cursor: pointer;
+    }
+
+    .filter {
+        margin:10px 0px 5px 0px;
+        @extend %clearfix;
+    }
+
+    input[type="text"], input[type="search"] {
+        border: 1px solid #c5c5c5;
+        background: $white;
+        color: #838687;
+        font-size: em_font_size(12px);
+        width: 17%;
+        padding: 8px 0px 8px 12px;
+        margin-left: 8px;
+    }
+
+    input[type="image"] {
+        margin-left: -6px;
+        vertical-align: middle;
+    }
+
+    label {
+        font-size: em_font_size(12px);
+        color: #838687;
+        padding-left: 13px;
+    }
+
+    .btn {
+        margin-left: -37px;
+    }
+
+    form {
+        width: 70%;
+        @extend %float_left;
+    }
+
+    .content-form {
+        @extend %clearfix;
+        padding: 30px;
+        border: 1px solid $gray;
+        background: $white;
+
+        .leftBox {
+            @extend %float_left;
+            width: 49%;
         }
 
-        .fa.fa-minus-circle {
-            font-size: 18px;
-            color: $white;
-            padding: 15px;
-            cursor: pointer;
-        }
-
-        .filter {
-            margin-bottom: 5px;
-            @extend %clearfix;
-        }
-
-        input[type="text"], input[type="search"] {
-            border: 1px solid #c5c5c5;
-            background: $white;
-            color: #838687;
-            font-size: em_font_size(12px);
-            width: 17%;
-            padding: 8px 0px 8px 12px;
-            margin-left: 8px;
-        }
-
-        input[type="image"] {
-            margin-left: -6px;
-            vertical-align: middle;
+        .rightBox {
+            @extend %float_right;
+            width: 49%;
         }
 
         label {
-            font-size: em_font_size(12px);
-            color: #838687;
-            padding-left: 13px;
+            color: #A43030;
+            @extend %text_right;
+            @extend %vertical_middle;
+            width: 22%;
+            @extend %float_left;
+            padding: 10px 10px 0px 0px;
         }
 
-        .btn {
-            margin-left: -37px;
+        input[type="text"] {
+            @include border-radius(6px);
+            width: 68%;
+            @extend %float_right;
         }
 
-        form {
+        select {
+            @include border-radius(6px);
             width: 70%;
+            height: 30px;
+            @extend %float_right;
+            font: {
+                family: HelveticaNeueBold, Arial, Helvetica, sans-serif;
+                size: em_font_size(12px);
+            }
+        }
+        
+        p {
+            margin-bottom: 15px;
+            @extend %clearfix;
         }
     }
 }
 
+.new-row .x-grid-cell {
+    background-color: #DE5555 !important;
+}
+
+.entered-row .x-grid-cell {
+    background-color: #EDEDED !important;
+    color: #707579 !important;
+}
+
+.unqualified-row .x-grid-cell {
+    background-color: #707579 !important;
+}
+
+.dead-row .x-grid-cell {
+    background-color: #FFBA00 !important;
+    color: $white !important;
+}
+
 .side-menu { 
-    margin-left: 288px !important; 
+    margin-left: 301px !important; 
 }
 
 footer {
@@ -451,5 +538,23 @@ footer {
             color: $footer-font-color;
             @include single-transition(all,0.3s, ease-in, 0s);
         }
+    }
+}
+
+.errorDiv {
+    @extend %vertical_middle;
+    margin-top: 50px;
+    @extend %margin_auto;
+    color: $red;
+}
+
+.x-grid-row {
+    height: 35px;
+
+    .x-grid-cell {
+        font: {
+            size: em_font_size(14px);
+        }
+        color: #E8E4E1;
     }
 }

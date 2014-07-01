@@ -1,15 +1,15 @@
 <?php
 
-class DashboardController extends \BaseController {
+class UserController extends BaseController {
 
 	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
-	public function showIndex()
+	public function index()
 	{
-		return View::make('dashboard.index');
+		//
 	}
 
 
@@ -31,7 +31,25 @@ class DashboardController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		$login_credentials =  [
+			'username' => Input::get('username'),
+			'password'  => Input::get('password') 
+		];
+		
+		if(helper::get_api_auth_token() == Input::get('auth_token')){
+
+            $result = User::checkLogin($login_credentials);
+            return $result;
+        }
+        else
+        {
+            $status['code']             = 'error';
+            $result['status']           = $status;
+            $result['response']         = array('invalid' => 'Authentication Token is not valid.');
+
+            //helper::update_activity_log($apiTransactionID, $parameters, $result);
+            return Response::json($result);
+        }
 	}
 
 

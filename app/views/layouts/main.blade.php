@@ -23,8 +23,8 @@
                         <ul>
                             <li>
                                 <a href="#">
-                                    <i class="fa fa-bell"></i>Notificaions 
-                                    <span class="notifaction pieClass">5</span>
+                                    <i class="fa fa-bell"></i>Notifications 
+                                    <span class="notifaction pieClass">&nbsp;</span>
                                 </a>
                             </li>
                             <li>
@@ -39,7 +39,7 @@
                             </li>
                         </ul>
                     </nav>
-                    <input class="innerShadow" type="text" id="search" name="search" placeholder="Serach" />
+                    <input class="innerShadow" type="text" id="search" name="search" placeholder="Search" />
                     <span class="btn">
                         <i class="fa fa-search"></i>
                     </span>
@@ -55,7 +55,7 @@
                             <i class="fa fa-list"></i>
                         </a>
                     </li>
-                    <li class="home current sideNav" >
+                    <li class="homenav current sideNav" >
                         <a href="#">
                             <i class="fa fa-home"></i>
                         </a>

@@ -55,7 +55,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => '127.0.0.1',
-			'database'  => 'dev',
+			'database'  => 'ss_crm',
 			'username'  => 'root',
 			'password'  => 'vagrant',
 			'charset'   => 'utf8',

@@ -5,7 +5,7 @@ Welcome to CRM - Dashboard
 @stop
 
 @section('metas')
-
+    <link rel="stylesheet" type="text/css" href="{{ URL::to('/') }}/js/vendor/extjs/resources/css/ext-neptune.css"/> 
 @stop
 
 @section('content')
@@ -25,17 +25,17 @@ Welcome to CRM - Dashboard
                 <i class="fa fa-minus-circle floatRight"></i>
             </header><!-- Header Gradient End -->
             <div class="filter">
-                <form method="post" class="floatLeft">
-                    <label for="filter">Filter by</label>
+                {{ Form::open() }}
+                    {{ Form::label('filterby', 'Filter by') }}
                     {{ Form::input('text', 'lead_status', '', ['placeholder' => 'Lead Status']) }}
                     {{ Form::input('text', 'status', '', ['placeholder' => 'Select']) }}
                     <span class="btn">
                         <i class="fa fa-calendar"></i>
                     </span>
                     <input type="image" img src="/images/searchIcon.png" alt="Search">
-                </form>
+                {{ Form::close() }}
                 <div class="floatRight creat-box">
-                    <img src="/images/creatBtn.png">
+                    <a href="/Leads/addLead"><img src="/images/creatBtn.png"></a>
                 </div>
             </div><!-- Filter Section End -->
             <section class="table-section">
@@ -46,6 +46,6 @@ Welcome to CRM - Dashboard
 @stop
 
 @section('js-scripts')
-{{ HTML::script('/js/vendor/extjs/bootstrap.js') }}
-{{ HTML::script('/js/grid-leads.js') }}
+{{ HTML::script('js/vendor/extjs/ext-all.js') }}
+{{ HTML::script('js/grid-leads.js') }}
 @stop

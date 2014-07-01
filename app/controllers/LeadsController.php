@@ -1,15 +1,15 @@
 <?php
 
-class DashboardController extends \BaseController {
+class LeadsController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
-	public function showIndex()
+	public function index()
 	{
-		return View::make('dashboard.index');
+		//
 	}
 
 
@@ -80,6 +80,11 @@ class DashboardController extends \BaseController {
 	public function destroy($id)
 	{
 		//
+	}
+
+	public function addLead()
+	{
+		return View::make('leads.addlead');
 	}
 
 
