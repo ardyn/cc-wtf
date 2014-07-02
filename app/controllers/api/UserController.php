@@ -36,18 +36,15 @@ class UserController extends BaseController {
 			'password'  => Input::get('password') 
 		];
 		
-		if(helper::get_api_auth_token() == Input::get('auth_token')){
+		if (helper::get_api_auth_token() == Input::get('auth_token')) {
 
             $result = User::checkLogin($login_credentials);
             return $result;
-        }
-        else
-        {
+        } else {
             $status['code']             = 'error';
             $result['status']           = $status;
             $result['response']         = array('invalid' => 'Authentication Token is not valid.');
 
-            //helper::update_activity_log($apiTransactionID, $parameters, $result);
             return Response::json($result);
         }
 	}

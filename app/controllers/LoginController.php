@@ -7,6 +7,18 @@ class LoginController extends \BaseController {
      *
      * @return Response
      */
+    public function index()
+    {
+        if (Auth::check()) 
+            return Redirect::to('/Dashboard');
+        return View::make('login.index');
+    }
+
+    /**
+     * Default route view rendering method
+     *
+     * @return Response
+     */
     public function getIndex()
     {
         if (Auth::check()) 

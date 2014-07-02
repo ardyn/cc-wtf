@@ -51,13 +51,15 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
                     return Response::json(['error' => true, 'data'  => 'Username don\'t have access']);
                 }
                 // returning success response
-                return Response::json(['error' => false, 'data'  => 'login success']);
+                return Response::json(['error' => false, 'data'  => 'Login success']);
 
             } else {
                 // returning error response
-                return Response::json(['error' => true, 'data'  => 'login fail']);
+                return Response::json(['error' => true, 'data'  => 'Login credentials are not correct']);
 
             }
+        } else {
+            return Response::json(['error' => true, 'data' => 'Login credentials required']);
         }
     }
 
